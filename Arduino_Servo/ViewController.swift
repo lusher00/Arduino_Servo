@@ -10,9 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var imgBluetoothStatus: UIImageView!
-    //@IBOutlet weak var positionSlider: UISlider!
-    @IBOutlet weak var textBox: UITextView!
+    @IBOutlet weak var textBox: UITextField!
     
     var timerTXDelay: NSTimer?
     var allowTX = true
@@ -20,37 +18,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        let superView = self.textBox.superview
-        textBox.removeFromSuperview()
-        //textBox.removeConstraints(self.view.constraints)
-        //textBox.translatesAutoresizingMaskIntoConstraints = true
-        //textBox.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
-        //textBox.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 300.0)
-        superView?.addSubview(self.textBox)
-        //textBox.autoresizingMask = [UIViewAutoresizing.FlexibleLeftMargin, UIViewAutoresizing.FlexibleRightMargin]
-        //textBox.center = CGPointMake(view.bounds.midX, view.bounds.midY)
-        
-        /*
-        // Rotate slider to vertical position
-        let superView = self.positionSlider.superview
-        positionSlider.removeFromSuperview()
-        positionSlider.removeConstraints(self.view.constraints)
-        positionSlider.translatesAutoresizingMaskIntoConstraints = true
-        positionSlider.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
-        positionSlider.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 300.0)
-        superView?.addSubview(self.positionSlider)
-        positionSlider.autoresizingMask = [UIViewAutoresizing.FlexibleLeftMargin, UIViewAutoresizing.FlexibleRightMargin]
-        positionSlider.center = CGPointMake(view.bounds.midX, view.bounds.midY)
-        
-        // Set thumb image on slider
-        positionSlider.setThumbImage(UIImage(named: "Bar"), forState: UIControlState.Normal)
-        */
-        
-        
+
         // Watch Bluetooth connection
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("connectionChanged:"), name: BLEServiceChangedStatusNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.connectionChanged(_:)), name: BLEServiceChangedStatusNotification, object: nil)
         
         // Start the Bluetooth discovery process
         btDiscoverySharedInstance
@@ -66,10 +36,6 @@ class ViewController: UIViewController {
         self.stopTimerTXDelay()
     }
     
-    @IBAction func positionSliderChanged(sender: UISlider) {
-        self.sendPosition(UInt8(sender.value))
-    }
-    
     func connectionChanged(notification: NSNotification) {
         // Connection status changed. Indicate on GUI.
         let userInfo = notification.userInfo as! [String: Bool]
@@ -78,12 +44,9 @@ class ViewController: UIViewController {
             // Set image based on connection status
             if let isConnected: Bool = userInfo["isConnected"] {
                 if isConnected {
-                    //self.imgBluetoothStatus.image = UIImage(named: "Bluetooth_Connected")
-                    
-                    // Send current slider position
-                    //self.sendPosition(UInt8( self.positionSlider.value))
+
                 } else {
-                    //self.imgBluetoothStatus.image = UIImage(named: "Bluetooth_Disconnected")
+
                 }
             }
         });

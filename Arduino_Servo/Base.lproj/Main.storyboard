@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C6K-6W-zz9">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Robot Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Arduino_Servo" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,27 +18,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g59-Mo-7Z0">
-                                <rect key="frame" x="20" y="20" width="560" height="560"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">After the terrible events of the original Universal Soldier testings, the budget has been slashed by the government. Under the orders of a CIA director, a gang of mercenaries take control of the new line of Universal Soldiers and try to use them into helping to smuggle diamonds to the highest foreign buyer. When Luc Deveroux, survivor from the first incident, continues to cause problems he newly found younger brother is taken prisoner along with his news reporter friend Veronica Reynolds. </string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdv-X9-1Ct">
+                                <rect key="frame" x="20" y="72" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAo-XR-gYp">
+                                <rect key="frame" x="20" y="101" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hello World" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Y7-Mv-b2N">
+                                <rect key="frame" x="20" y="139" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="ZKA-vh-72r"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="g59-Mo-7Z0" secondAttribute="bottom" constant="20" id="1j2-HM-1WK"/>
-                            <constraint firstItem="g59-Mo-7Z0" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" constant="20" id="2RL-bA-JsA"/>
-                            <constraint firstItem="g59-Mo-7Z0" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="k5m-fW-3zU"/>
-                            <constraint firstItem="g59-Mo-7Z0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="nSg-gu-Qei"/>
+                            <constraint firstItem="eAo-XR-gYp" firstAttribute="leading" secondItem="4Y7-Mv-b2N" secondAttribute="leading" id="7Ug-Nb-tsl"/>
+                            <constraint firstItem="tdv-X9-1Ct" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="FRx-mx-H1a"/>
+                            <constraint firstItem="tdv-X9-1Ct" firstAttribute="leading" secondItem="eAo-XR-gYp" secondAttribute="leading" id="McS-jX-IY0"/>
+                            <constraint firstItem="eAo-XR-gYp" firstAttribute="top" secondItem="tdv-X9-1Ct" secondAttribute="bottom" constant="8" symbolic="YES" id="PL0-u7-r8N"/>
+                            <constraint firstItem="tdv-X9-1Ct" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="t7X-cv-ReY"/>
+                            <constraint firstItem="4Y7-Mv-b2N" firstAttribute="top" secondItem="eAo-XR-gYp" secondAttribute="bottom" constant="8" symbolic="YES" id="vps-Bd-gz4"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Robot Controller" id="am2-fh-N05"/>
                     <connections>
-                        <outlet property="textBox" destination="g59-Mo-7Z0" id="Khw-Ol-yE8"/>
+                        <outlet property="textBox" destination="4Y7-Mv-b2N" id="3r4-Rd-mgy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1257" y="383"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="w4G-kT-fb3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C6K-6W-zz9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XP5-Z0-Y2p" userLabel="Robot Controller">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="DMm-6y-YhF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="slW-ei-mXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="445" y="383"/>
         </scene>

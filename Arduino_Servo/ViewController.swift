@@ -75,7 +75,7 @@ class ViewController: UIViewController {
             // Start delay timer
             self.allowTX = false
             if timerTXDelay == nil {
-                timerTXDelay = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("timerTXDelayElapsed"), userInfo: nil, repeats: false)
+                timerTXDelay = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(ViewController.timerTXDelayElapsed), userInfo: nil, repeats: false)
             }
         }
     }

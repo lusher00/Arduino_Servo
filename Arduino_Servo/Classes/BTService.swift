@@ -15,6 +15,7 @@ let BLEServiceUUID = CBUUID(string: "FFE0")
 
 let PositionCharUUID = CBUUID(string: "FFE1")
 let BLEServiceChangedStatusNotification = "kBLEServiceChangedStatusNotification"
+let BLEDataChangedStatusNotification = "kBLEDataChangedStatusNotification"
 
 class BTService: NSObject, CBPeripheralDelegate {
     var peripheral: CBPeripheral?
@@ -106,7 +107,9 @@ class BTService: NSObject, CBPeripheralDelegate {
             //print(characteristic.value?.description)
             let str = NSString(data: characteristic.value!, encoding: NSUTF8StringEncoding) as? String
             
-            //ViewController.textBox
+            //viewControllerSharedInstance.update("Hello World")
+            
+            sendBTServiceNotificationWithData(str!)
             
             print(str)
         }
@@ -128,5 +131,11 @@ class BTService: NSObject, CBPeripheralDelegate {
         let connectionDetails = ["isConnected": isBluetoothConnected]
         NSNotificationCenter.defaultCenter().postNotificationName(BLEServiceChangedStatusNotification, object: self, userInfo: connectionDetails)
     }
+    
+    func sendBTServiceNotificationWithData(data: String) {
+        let connectionDetails = ["data": data]
+        NSNotificationCenter.defaultCenter().postNotificationName(BLEDataChangedStatusNotification, object: self, userInfo: connectionDetails)
+    }
+    
     
 }

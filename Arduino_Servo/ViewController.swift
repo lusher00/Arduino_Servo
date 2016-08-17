@@ -8,6 +8,8 @@
 
 import UIKit
 
+let viewControllerSharedInstance = ViewController()
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var textBox: UITextField!
@@ -21,7 +23,11 @@ class ViewController: UIViewController {
 
         // Watch Bluetooth connection
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.connectionChanged(_:)), name: BLEServiceChangedStatusNotification, object: nil)
+
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.dataReceived(_:)), name: BLEDataChangedStatusNotification, object: nil)
+
+
         // Start the Bluetooth discovery process
         btDiscoverySharedInstance
     }
@@ -48,6 +54,17 @@ class ViewController: UIViewController {
                 } else {
 
                 }
+            }
+        });
+    }
+    
+    func dataReceived(notification: NSNotification){
+        let userInfo = notification.userInfo as! [String: String]
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            // Set image based on connection status
+            if let data: String = userInfo["data"] {
+                self.textBox.text = data
             }
         });
     }
@@ -95,6 +112,10 @@ class ViewController: UIViewController {
         
         timerTXDelay?.invalidate()
         self.timerTXDelay = nil
+    }
+    
+    func update(str: String){
+        textBox.text = str
     }
     
 }

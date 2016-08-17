@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<<<<<<< Updated upstream
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C6K-6W-zz9">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-=======
-<<<<<<< HEAD
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
-    <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-=======
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C6K-6W-zz9">
-    <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
->>>>>>> Stashed changes
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
->>>>>>> origin/master
     </dependencies>
     <scenes>
         <!--Robot Controller-->
@@ -32,41 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QVq-K4-v83">
-                                <rect key="frame" x="169" y="273" width="92" height="30"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mDq-Cn-Hcu">
-                                        <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NV8-lX-l0z">
-                                                <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mdw-7H-nBf">
-                                                        <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
-                                                        <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="hello world" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sax-eA-D4Y">
-                                                                <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="QVq-K4-v83" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="169" id="6hY-sM-1wf"/>
-                            <constraint firstItem="QVq-K4-v83" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="253" id="RAo-1C-dRL"/>
-=======
->>>>>>> Stashed changes
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdv-X9-1Ct">
                                 <rect key="frame" x="20" y="72" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -94,23 +45,11 @@
                             <constraint firstItem="eAo-XR-gYp" firstAttribute="top" secondItem="tdv-X9-1Ct" secondAttribute="bottom" constant="8" symbolic="YES" id="PL0-u7-r8N"/>
                             <constraint firstItem="tdv-X9-1Ct" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="t7X-cv-ReY"/>
                             <constraint firstItem="4Y7-Mv-b2N" firstAttribute="top" secondItem="eAo-XR-gYp" secondAttribute="bottom" constant="8" symbolic="YES" id="vps-Bd-gz4"/>
-<<<<<<< Updated upstream
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Robot Controller" id="am2-fh-N05"/>
                     <connections>
-<<<<<<< Updated upstream
                         <outlet property="textBox" destination="4Y7-Mv-b2N" id="3r4-Rd-mgy"/>
-=======
-<<<<<<< HEAD
-                        <outlet property="textBox" destination="sax-eA-D4Y" id="Gkt-TE-jfj"/>
-=======
-                        <outlet property="textBox" destination="4Y7-Mv-b2N" id="3r4-Rd-mgy"/>
->>>>>>> origin/master
->>>>>>> Stashed changes
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

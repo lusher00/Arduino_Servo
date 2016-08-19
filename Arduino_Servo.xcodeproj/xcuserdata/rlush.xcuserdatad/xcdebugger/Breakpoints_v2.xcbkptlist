@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Arduino_Servo/ViewController.swift"
+            timestampString = "493305337.603657"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Arduino_Servo.ViewController.connectionStatusLabel.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UILabel&gt;"
+                  moduleName = "Arduino_Servo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlush/Documents/XCode/Arduino_Servo/Arduino_Servo/ViewController.swift"
+                  timestampString = "493305548.562321"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Arduino_Servo.ViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; Arduino_Servo.ViewController"
+                  moduleName = "Arduino_Servo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlush/Documents/XCode/Arduino_Servo/Arduino_Servo/ViewController.swift"
+                  timestampString = "493305548.562466"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Arduino_Servo.ViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Arduino_Servo.ViewController&gt;"
+                  moduleName = "Arduino_Servo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlush/Documents/XCode/Arduino_Servo/Arduino_Servo/ViewController.swift"
+                  timestampString = "493305548.562581"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

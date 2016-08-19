@@ -13,14 +13,20 @@ let viewControllerSharedInstance = ViewController()
 class ViewController: UIViewController {
     
     @IBOutlet weak var textBox: UITextField!
+    @IBOutlet weak var connectionStatusLabel : UILabel!
+    
     
     var timerTXDelay: NSTimer?
     var allowTX = true
     var lastPosition: UInt8 = 255
+    var dataIn = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.connectionStatusLabel.text = "Disconnected"
+        self.connectionStatusLabel.textColor = UIColor.redColor()
+        
         // Watch Bluetooth connection
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.connectionChanged(_:)), name: BLEServiceChangedStatusNotification, object: nil)
 
@@ -50,9 +56,11 @@ class ViewController: UIViewController {
             // Set image based on connection status
             if let isConnected: Bool = userInfo["isConnected"] {
                 if isConnected {
-
+                    self.connectionStatusLabel.text = "Connected"
+                    self.connectionStatusLabel.textColor = UIColor.greenColor()
                 } else {
-
+                    self.connectionStatusLabel.text = "Disconnected"
+                    self.connectionStatusLabel.textColor = UIColor.redColor()
                 }
             }
         });
@@ -64,7 +72,15 @@ class ViewController: UIViewController {
         dispatch_async(dispatch_get_main_queue(), {
             // Set image based on connection status
             if let data: String = userInfo["data"] {
-                self.textBox.text = data
+                
+                self.dataIn += data
+                var dataArray = data.characters.split{$0 == "\r\n"}.map(String.init)
+                
+                if(dataArray.count > 1)
+                {
+                    self.textBox.text = dataArray[0]
+                    self.dataIn = dataArray[1]
+                }
             }
         });
     }

@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		764153971C95D3A40000D268 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764153961C95D3A40000D268 /* Images.xcassets */; };
-		76957E551C95DDED007F8F3E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76957E541C95DDED007F8F3E /* Default-568h@2x.png */; };
 		76DFED9A1D65297E0073136C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76DFED981D65297E0073136C /* Main.storyboard */; };
+		76DFEDA61D680CBE0073136C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76DFEDA51D680CBE0073136C /* Images.xcassets */; };
 		C089C49419E90B910084D830 /* BTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C089C49319E90B910084D830 /* BTService.swift */; };
 		C0BACECB19D3027000DF2DB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BACECA19D3027000DF2DB8 /* AppDelegate.swift */; };
 		C0BACECD19D3027000DF2DB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BACECC19D3027000DF2DB8 /* ViewController.swift */; };
@@ -17,9 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		764153961C95D3A40000D268 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		76957E541C95DDED007F8F3E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		76DFED991D65297E0073136C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		76DFEDA51D680CBE0073136C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Images.xcassets/Images.xcassets; sourceTree = "<group>"; };
 		C089C49319E90B910084D830 /* BTService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTService.swift; path = Classes/BTService.swift; sourceTree = "<group>"; };
 		C0BACEC519D3027000DF2DB8 /* Arduino_Servo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arduino_Servo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0BACEC919D3027000DF2DB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,7 +40,6 @@
 		C0BACEBC19D3027000DF2DB8 = {
 			isa = PBXGroup;
 			children = (
-				76957E541C95DDED007F8F3E /* Default-568h@2x.png */,
 				C0BACEC719D3027000DF2DB8 /* Arduino_Servo */,
 				C0BACEC619D3027000DF2DB8 /* Products */,
 			);
@@ -63,8 +60,8 @@
 				C0BACECA19D3027000DF2DB8 /* AppDelegate.swift */,
 				C0BACECC19D3027000DF2DB8 /* ViewController.swift */,
 				76DFED981D65297E0073136C /* Main.storyboard */,
-				764153961C95D3A40000D268 /* Images.xcassets */,
 				C0BACEC819D3027000DF2DB8 /* Supporting Files */,
+				76DFEDA51D680CBE0073136C /* Images.xcassets */,
 			);
 			path = Arduino_Servo;
 			sourceTree = "<group>";
@@ -147,9 +144,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76DFEDA61D680CBE0073136C /* Images.xcassets in Resources */,
 				76DFED9A1D65297E0073136C /* Main.storyboard in Resources */,
-				764153971C95D3A40000D268 /* Images.xcassets in Resources */,
-				76957E551C95DDED007F8F3E /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +262,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = Arduino_Servo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -281,6 +278,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = Arduino_Servo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

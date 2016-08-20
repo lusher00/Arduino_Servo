@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 let viewControllerSharedInstance = ViewController()
 
@@ -14,7 +15,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var textBox: UITextField!
     @IBOutlet weak var connectionStatusLabel : UILabel!
-    
+    var Photo: UIImageView!
+    @IBOutlet var scroll: UIScrollView!
+
     
     var timerTXDelay: NSTimer?
     var allowTX = true
@@ -24,8 +27,40 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        /////////
+        //var imageRect: CGRect
+        //self.Photo = NSImageView.init()
+        //self.Photo = UIImageView(frame: CGRectMake(0.0, 0.0, 350.0, 720.0))
+        //self.Photo.image = UIImage.init(named:"horizon")
+        
+        //imageRect = CGRectMake(0.0, 0.0, self.Photo.image!.size.width, self.Photo.image!.size.height)
+        //print(imageRect)
+        //self.Photo = NSImageView(frame: imageRect)
+        //self.Photo..setBoundsSize(CGSize(width: imageRect.width, height: imageRect.height))
+        //self.Photo.imageScaling = NSImageScaling.ScaleNone
+        //self.Photo.imageAlignment = NSImageAlignment.AlignCenter
+        
+        
+        
+        
+        //self.scroll.frame = imageRect//(CGRectMake(x: 0, y: 0, w: imageRect.width, h: imageRect.width))
+        //self.scroll.hasVerticalScroller = true
+        //self.scroll.hasHorizontalScroller = false
+        //self.Photo.setFrameSize(CGSize(width: imageRect.width,height: imageRect.width))
+        //self.scroll.documentView = self.Photo
+        
+        //scrollView!.documentView = toolsView
+        //let scrollLocation = NSPoint(x: 0, y: 185)
+        //scroll.contentView.scrollToPoint(scrollLocation)
+        //scroll.reflectScrolledClipView(leftScrollView!.contentView)
+
+        /////////
+        
+        
         self.connectionStatusLabel.text = "Disconnected"
         self.connectionStatusLabel.textColor = UIColor.redColor()
+        
+        self.textBox.font = UIFont(name: self.textBox.font!.fontName, size: 8)
         
         // Watch Bluetooth connection
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.connectionChanged(_:)), name: BLEServiceChangedStatusNotification, object: nil)
@@ -74,13 +109,22 @@ class ViewController: UIViewController {
             if let data: String = userInfo["data"] {
                 
                 self.dataIn += data
-                var dataArray = data.characters.split{$0 == "\r\n"}.map(String.init)
                 
-                if(dataArray.count > 1)
-                {
+                if(self.dataIn.containsString("\r\n")){
+                    var dataArray = self.dataIn.characters.split{$0 == "\r\n"}.map(String.init)
+
                     self.textBox.text = dataArray[0]
-                    self.dataIn = dataArray[1]
+
+                    if(dataArray.count > 1)
+                    {
+                        self.dataIn = dataArray[1]
+                    }
+                    else
+                    {
+                        self.dataIn = ""
+                    }
                 }
+                
             }
         });
     }

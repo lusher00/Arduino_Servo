@@ -20,64 +20,41 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdv-X9-1Ct">
                                 <rect key="frame" x="279" y="72" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="81D-R7-1kb"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hello World" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Y7-Mv-b2N">
                                 <rect key="frame" x="20" y="139" width="560" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="i1e-GM-Lor"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAo-XR-gYp">
                                 <rect key="frame" x="277" y="550" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="csu-jb-4Px"/>
+                                    <constraint firstAttribute="height" constant="30" id="RUM-t7-odh"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HlW-T9-Rc0">
-                                <rect key="frame" x="180" y="236" width="240" height="240"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizon" translatesAutoresizingMaskIntoConstraints="NO" id="uFE-wJ-4Ve">
-                                        <rect key="frame" x="0.0" y="56" width="240" height="128"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="uFE-wJ-4Ve" firstAttribute="top" secondItem="HlW-T9-Rc0" secondAttribute="top" constant="56" id="1vc-ZE-mAs"/>
-                                    <constraint firstAttribute="trailing" secondItem="uFE-wJ-4Ve" secondAttribute="trailing" id="PPq-1l-rVL"/>
-                                    <constraint firstItem="uFE-wJ-4Ve" firstAttribute="leading" secondItem="HlW-T9-Rc0" secondAttribute="leading" id="Sfp-Fm-5u1"/>
-                                    <constraint firstItem="uFE-wJ-4Ve" firstAttribute="centerX" secondItem="HlW-T9-Rc0" secondAttribute="centerX" id="gi2-ui-clQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="uFE-wJ-4Ve" secondAttribute="bottom" constant="56" id="rtK-yI-Kgz"/>
-                                    <constraint firstItem="uFE-wJ-4Ve" firstAttribute="centerY" secondItem="HlW-T9-Rc0" secondAttribute="centerY" id="zvL-JG-7ew"/>
-                                </constraints>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4Y7-Mv-b2N" firstAttribute="top" secondItem="tdv-X9-1Ct" secondAttribute="bottom" constant="46" id="5oh-tb-8XP"/>
-                            <constraint firstItem="HlW-T9-Rc0" firstAttribute="top" secondItem="4Y7-Mv-b2N" secondAttribute="bottom" constant="67" id="8Qf-1R-wf9"/>
-                            <constraint firstItem="4Y7-Mv-b2N" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Ek1-TL-h89"/>
-                            <constraint firstItem="4Y7-Mv-b2N" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="No2-Dw-RPa"/>
-                            <constraint firstItem="HlW-T9-Rc0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="180" id="QWI-6d-TIi"/>
-                            <constraint firstItem="HlW-T9-Rc0" firstAttribute="centerX" secondItem="eAo-XR-gYp" secondAttribute="centerX" id="Qtw-kf-xw0"/>
-                            <constraint firstItem="tdv-X9-1Ct" firstAttribute="centerX" secondItem="4Y7-Mv-b2N" secondAttribute="centerX" id="WTx-H5-nzd"/>
-                            <constraint firstItem="eAo-XR-gYp" firstAttribute="top" secondItem="HlW-T9-Rc0" secondAttribute="bottom" constant="74" id="ZFh-Hd-MOu"/>
-                            <constraint firstAttribute="bottom" secondItem="eAo-XR-gYp" secondAttribute="bottom" constant="20" symbolic="YES" id="iaB-Az-SfF"/>
-                            <constraint firstItem="4Y7-Mv-b2N" firstAttribute="centerX" secondItem="HlW-T9-Rc0" secondAttribute="centerX" id="kua-H8-hXJ"/>
-                            <constraint firstItem="tdv-X9-1Ct" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="paL-n4-Hcd"/>
+                            <constraint firstItem="4Y7-Mv-b2N" firstAttribute="top" secondItem="tdv-X9-1Ct" secondAttribute="bottom" constant="46" id="DjJ-rA-LGg"/>
+                            <constraint firstItem="4Y7-Mv-b2N" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="MDu-FM-yJG"/>
+                            <constraint firstAttribute="bottom" secondItem="eAo-XR-gYp" secondAttribute="bottom" constant="20" symbolic="YES" id="b6a-RM-uDL"/>
+                            <constraint firstItem="tdv-X9-1Ct" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="jN1-lr-gmg"/>
+                            <constraint firstItem="4Y7-Mv-b2N" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="mW1-sd-Yqm"/>
+                            <constraint firstItem="tdv-X9-1Ct" firstAttribute="centerX" secondItem="4Y7-Mv-b2N" secondAttribute="centerX" id="vJz-nE-IbG"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="eAo-XR-gYp"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Robot Controller" id="am2-fh-N05"/>
                     <connections>
                         <outlet property="connectionStatusLabel" destination="tdv-X9-1Ct" id="RpK-7c-FGr"/>
-                        <outlet property="scroll" destination="HlW-T9-Rc0" id="RIz-OH-QVK"/>
                         <outlet property="textBox" destination="4Y7-Mv-b2N" id="3r4-Rd-mgy"/>
                     </connections>
                 </viewController>
@@ -104,7 +81,4 @@
             <point key="canvasLocation" x="445" y="383"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="horizon" width="350" height="720"/>
-    </resources>
 </document>

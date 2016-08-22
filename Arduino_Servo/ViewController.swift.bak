@@ -15,10 +15,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var textBox: UITextField!
     @IBOutlet weak var connectionStatusLabel : UILabel!
-    var myImageView: UIImageView!
-    @IBOutlet var myScrollView: UIScrollView!
-    
-    
+    var image: UIImageView!
+    @IBOutlet var scroll: UIScrollView!
+
     
     var timerTXDelay: NSTimer?
     var allowTX = true
@@ -27,28 +26,42 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //let imageRect = CGRectMake(self.view.frame.width / 2 - 100, self.view.frame.height / 2, 200, 200)
 
-        let image = UIImage.init(named:"horizon")!
+        /////////
+        print(self.view.frame.width)
+        print(self.view.frame.height)
+        let imageRect = CGRectMake(self.view.frame.width / 2 - 100, self.view.frame.height / 2, 200, 200)
+        self.image = UIImageView.init()
+        self.image = UIImageView(frame: imageRect)
+        //self.image.contentMode = UIViewContentMode.Center
+        //self.image.
+        self.image.image = UIImage.init(named:"horizon")
+        self.view.addSubview(self.image)
         
-        self.myImageView = UIImageView.init()
-        self.myImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
-        self.myImageView.contentMode = UIViewContentMode.Center
-        self.myImageView.clipsToBounds = true
-        self.myImageView.image = image
+        //var imageRect = CGRectMake(0.0, 0.0, self.Photo.image!.size.width, self.Photo.image!.size.height)
+        //print(imageRect)
+        //self.Photo = UIImageView(frame: imageRect)
+        //self.Photo.setBoundsSize(CGSize(width: imageRect.width, height: imageRect.height))
+        //self.Photo.imageScaling = UIImageScaling.ScaleNone
+        //self.Photo.imageAlignment = NSImageAlignment.AlignCenter
         
         
-        self.myScrollView = UIScrollView(frame: CGRectMake(self.view.frame.width / 2 - 100, self.view.frame.height / 2, 200, 200))
-        self.myScrollView.contentSize = CGSize(width: image.size.width, height: image.size.height)
         
-        self.myScrollView.center = self.myImageView.center
-        //self.myScrollView.frame = imageRect
-        self.myScrollView.backgroundColor = UIColor.blackColor()
-        //self.myScrollView.contentOffset = CGPoint(x: 0, y: 0)
-        self.myScrollView.addSubview(self.myImageView)
-        self.view.addSubview(self.myScrollView)
+        self.scroll = UIScrollView(frame: imageRect)
+        self.scroll.frame = imageRect
+        self.scroll.backgroundColor = UIColor.blackColor()
+        self.scroll.addSubview(image)
+        //self.view.addSubview(self.scroll)
+        //self.scroll.hasVerticalScroller = true
+        //self.scroll.hasHorizontalScroller = false
+        //self.Photo.setFrameSize(CGSize(width: imageRect.width,height: imageRect.width))
+        //self.scroll.documentView = self.Photo
         
+        //scrollView!.documentView = toolsView
+        //let scrollLocation = NSPoint(x: 0, y: 185)
+        //scroll.contentView.scrollToPoint(scrollLocation)
+        //scroll.reflectScrolledClipView(leftScrollView!.contentView)
+
         /////////
         
         
@@ -59,11 +72,11 @@ class ViewController: UIViewController {
         
         // Watch Bluetooth connection
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.connectionChanged(_:)), name: BLEServiceChangedStatusNotification, object: nil)
-        
+
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.dataReceived(_:)), name: BLEDataChangedStatusNotification, object: nil)
-        
-        
+
+
         // Start the Bluetooth discovery process
         btDiscoverySharedInstance
     }
@@ -107,9 +120,9 @@ class ViewController: UIViewController {
                 
                 if(self.dataIn.containsString("\r\n")){
                     var dataArray = self.dataIn.characters.split{$0 == "\r\n"}.map(String.init)
-                    
+
                     self.textBox.text = dataArray[0]
-                    
+
                     if(dataArray.count > 1)
                     {
                         self.dataIn = dataArray[1]

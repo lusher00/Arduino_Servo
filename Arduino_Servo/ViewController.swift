@@ -39,11 +39,16 @@ class ViewController: UIViewController {
         self.myImageView.image = image
         
         
-        self.myScrollView = UIScrollView(frame: CGRectMake(self.view.frame.width / 2 - 100, self.view.frame.height / 2, 200, 200))
+        //self.myScrollView = UIScrollView(frame: CGRectMake(self.view.frame.width / 2 - 100, self.view.frame.height / 2, 200, 200))
+        self.myScrollView = UIScrollView(frame: CGRectMake(0, 0, image.size.width, 200))
         self.myScrollView.contentSize = CGSize(width: image.size.width, height: image.size.height)
         
-        self.myScrollView.center = self.myImageView.center
-        //self.myScrollView.frame = imageRect
+        
+        
+        self.myScrollView.center = self.view.center
+        
+        self.myScrollView.contentOffset = CGPoint(x: (image.size.width / 2) - (self.myScrollView.frame.width / 2),
+                                                  y: (image.size.height / 2) - (self.myScrollView.frame.height / 2))
         self.myScrollView.backgroundColor = UIColor.blackColor()
         //self.myScrollView.contentOffset = CGPoint(x: 0, y: 0)
         self.myScrollView.addSubview(self.myImageView)
@@ -110,6 +115,9 @@ class ViewController: UIViewController {
                     
                     self.textBox.text = dataArray[0]
                     
+                    //print(self.handleData(dataArray[0]))
+                    
+                    
                     if(dataArray.count > 1)
                     {
                         self.dataIn = dataArray[1]
@@ -122,6 +130,15 @@ class ViewController: UIViewController {
                 
             }
         });
+    }
+    
+    func handleData(data: String) -> Double
+    {
+        let dataArray = data.characters.split{$0 == ";"}.map(String.init)
+        
+        let angle = Double(dataArray[2])
+        
+        return angle!
     }
     
     func sendPosition(position: UInt8) {

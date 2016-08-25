@@ -39,12 +39,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4Y7-Mv-b2N" firstAttribute="top" secondItem="tdv-X9-1Ct" secondAttribute="bottom" constant="46" id="DjJ-rA-LGg"/>
-                            <constraint firstItem="4Y7-Mv-b2N" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="MDu-FM-yJG"/>
+                            <constraint firstItem="4Y7-Mv-b2N" firstAttribute="top" secondItem="tdv-X9-1Ct" secondAttribute="bottom" constant="46" id="AEI-Se-02A"/>
+                            <constraint firstItem="4Y7-Mv-b2N" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="DWJ-KP-QDL"/>
+                            <constraint firstItem="4Y7-Mv-b2N" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="RNx-0L-4Ef"/>
                             <constraint firstAttribute="bottom" secondItem="eAo-XR-gYp" secondAttribute="bottom" constant="20" symbolic="YES" id="b6a-RM-uDL"/>
-                            <constraint firstItem="tdv-X9-1Ct" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="jN1-lr-gmg"/>
-                            <constraint firstItem="4Y7-Mv-b2N" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="mW1-sd-Yqm"/>
-                            <constraint firstItem="tdv-X9-1Ct" firstAttribute="centerX" secondItem="4Y7-Mv-b2N" secondAttribute="centerX" id="vJz-nE-IbG"/>
+                            <constraint firstItem="tdv-X9-1Ct" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="ib7-mk-mrx"/>
+                            <constraint firstItem="tdv-X9-1Ct" firstAttribute="centerX" secondItem="4Y7-Mv-b2N" secondAttribute="centerX" id="xfm-1E-iVX"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">

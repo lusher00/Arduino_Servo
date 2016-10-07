@@ -13,19 +13,19 @@ let btDiscoverySharedInstance = BTDiscovery();
 
 class BTDiscovery: NSObject, CBCentralManagerDelegate {
     
-    private var centralManager: CBCentralManager?
-    private var peripheralBLE: CBPeripheral?
+    fileprivate var centralManager: CBCentralManager?
+    fileprivate var peripheralBLE: CBPeripheral?
     
     override init() {
         super.init()
         
-        let centralQueue = dispatch_queue_create("com.raywenderlich", DISPATCH_QUEUE_SERIAL)
+        let centralQueue = DispatchQueue(label: "com.raywenderlich", attributes: [])
         centralManager = CBCentralManager(delegate: self, queue: centralQueue)
     }
     
     func startScanning() {
         if let central = centralManager {
-            central.scanForPeripheralsWithServices([BLEServiceUUID], options: nil)
+            central.scanForPeripherals(withServices: [BLEServiceUUID], options: nil)
             //central.scanForPeripheralsWithServices(nil, options: nil)
             
         }
@@ -41,7 +41,7 @@ class BTDiscovery: NSObject, CBCentralManagerDelegate {
     
     // MARK: - CBCentralManagerDelegate
     
-    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         // Be sure to retain the peripheral or it will fail during connection.
         
         // Validate peripheral information
@@ -50,7 +50,7 @@ class BTDiscovery: NSObject, CBCentralManagerDelegate {
         }
         
         // If not already connected to a peripheral, then connect to this one
-        if ((self.peripheralBLE == nil) || (self.peripheralBLE?.state == CBPeripheralState.Disconnected)) {
+        if ((self.peripheralBLE == nil) || (self.peripheralBLE?.state == CBPeripheralState.disconnected)) {
             // Retain the peripheral before trying to connect
             self.peripheralBLE = peripheral
             
@@ -58,11 +58,11 @@ class BTDiscovery: NSObject, CBCentralManagerDelegate {
             self.bleService = nil
             
             // Connect to peripheral
-            central.connectPeripheral(peripheral, options: nil)
+            central.connect(peripheral, options: nil)
         }
     }
     
-    func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral) {
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         
         // Create new service class
         if (peripheral == self.peripheralBLE) {
@@ -73,7 +73,7 @@ class BTDiscovery: NSObject, CBCentralManagerDelegate {
         central.stopScan()
     }
     
-    func centralManager(central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?) {
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         
         // See if it was our peripheral that disconnected
         if (peripheral == self.peripheralBLE) {
@@ -93,26 +93,27 @@ class BTDiscovery: NSObject, CBCentralManagerDelegate {
         self.peripheralBLE = nil
     }
     
-    func centralManagerDidUpdateState(central: CBCentralManager) {
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
         switch (central.state) {
-        case CBCentralManagerState.PoweredOff:
+        case CBManagerState.poweredOff:
+        //case CBCentralManagerState.poweredOff:
             self.clearDevices()
             
-        case CBCentralManagerState.Unauthorized:
+        case CBManagerState.unauthorized:
             // Indicate to user that the iOS device does not support BLE.
             break
             
-        case CBCentralManagerState.Unknown:
+        case CBManagerState.unknown:
             // Wait for another event
             break
             
-        case CBCentralManagerState.PoweredOn:
+        case CBManagerState.poweredOn:
             self.startScanning()
             
-        case CBCentralManagerState.Resetting:
+        case CBManagerState.resetting:
             self.clearDevices()
             
-        case CBCentralManagerState.Unsupported:
+        case CBManagerState.unsupported:
             break
         }
     }

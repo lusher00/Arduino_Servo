@@ -45,7 +45,6 @@ class ViewController: UIViewController {
             view.layer.addSublayer(layer)
             
             self.view.addSubview(view)
-
         
         #else
             

@@ -98,20 +98,8 @@ class BTService: NSObject, CBPeripheralDelegate {
     {
         if characteristic.uuid == PositionCharUUID
         {
-            //var data = characteristic.value
-            //var values = [UInt8](count:data.length, repeatedValue:0)
-            //data.getBytes(&values, length:data.length)
-            
-            //print(String(characteristic.value))
-            //print("received data")
-            //print(characteristic.value?.description)
             let str = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue) as? String
-            
-            //viewControllerSharedInstance.update("Hello World")
-            
             sendBTServiceNotificationWithData(str!)
-            
-            print(str)
         }
     }
     

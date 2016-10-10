@@ -138,11 +138,11 @@ class ViewController: UIViewController {
                 self.dataIn += data
                 
                 if(self.dataIn.contains("\r\n")){
-                    var dataArray = self.dataIn.characters.split{$0 == "\r\n"}.map(String.init)
+                    var dataArray = self.dataIn.components(separatedBy: "\r\n")
+                    let tString = self.handleData(dataArray[0]).fixedFractionDigits(digits: 3)
+                    self.textBox.text = tString
                     
-                    self.textBox.text = dataArray[0]
-                    
-                    print(self.handleData(dataArray[0]))
+                    print(tString)
                     
                     
                     if(dataArray.count > 1)
@@ -161,7 +161,7 @@ class ViewController: UIViewController {
     
     func handleData(_ data: String) -> Double
     {
-        let dataArray = data.characters.split{$0 == ";"}.map(String.init)
+        let dataArray = data.components(separatedBy: "; ")
         
         if let angle = Double(dataArray[2]){
             return angle
@@ -220,5 +220,11 @@ class ViewController: UIViewController {
         textBox.text = str
     }
     
+}
+
+extension Double {
+    func fixedFractionDigits(digits: Int) -> String {
+        return String(format: "%.\(digits)f", self)
+    }
 }
 

@@ -109,10 +109,18 @@ class BTService: NSObject, CBPeripheralDelegate {
         // See if characteristic has been discovered before writing to it
         if let positionCharacteristic = self.positionCharacteristic {
             // Need a mutable var to pass to writeValue function
-            var positionValue = position
+            var positionValue : UInt8 = 180
             //let data = Data(bytes: UnsafePointer<UInt8>(&positionValue), count: sizeof(UInt8))
             let data = Data(bytes: &positionValue, count: MemoryLayout<UInt8>.size)
             self.peripheral?.writeValue(data, for: positionCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            
+            /*
+            let tString = "Hello World!"
+            if let newData = tString.data(using: .utf8){
+                //print(newData as NSData)
+                self.peripheral?.writeValue(newData, for: positionCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            }
+ */
         }
     }
     

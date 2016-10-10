@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59A093211DAC09A100D1212F /* ViewControllerButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A093201DAC09A100D1212F /* ViewControllerButtons.swift */; };
 		76DFED9A1D65297E0073136C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76DFED981D65297E0073136C /* Main.storyboard */; };
 		76DFEDA61D680CBE0073136C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76DFEDA51D680CBE0073136C /* Images.xcassets */; };
-		76DFEDA81D69069B0073136C /* ViewController.swift.bak in Resources */ = {isa = PBXBuildFile; fileRef = 76DFEDA71D69069B0073136C /* ViewController.swift.bak */; };
 		C089C49419E90B910084D830 /* BTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C089C49319E90B910084D830 /* BTService.swift */; };
 		C0BACECB19D3027000DF2DB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BACECA19D3027000DF2DB8 /* AppDelegate.swift */; };
 		C0BACECD19D3027000DF2DB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BACECC19D3027000DF2DB8 /* ViewController.swift */; };
@@ -17,9 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59A093201DAC09A100D1212F /* ViewControllerButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerButtons.swift; path = ../ViewControllerButtons.swift; sourceTree = "<group>"; };
 		76DFED991D65297E0073136C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		76DFEDA51D680CBE0073136C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Images.xcassets/Images.xcassets; sourceTree = "<group>"; };
-		76DFEDA71D69069B0073136C /* ViewController.swift.bak */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewController.swift.bak; sourceTree = "<group>"; };
 		C089C49319E90B910084D830 /* BTService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTService.swift; path = Classes/BTService.swift; sourceTree = "<group>"; };
 		C0BACEC519D3027000DF2DB8 /* Arduino_Servo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arduino_Servo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0BACEC919D3027000DF2DB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 				C0BACEEA19D30B9D00DF2DB8 /* Classes */,
 				C0BACECA19D3027000DF2DB8 /* AppDelegate.swift */,
 				C0BACECC19D3027000DF2DB8 /* ViewController.swift */,
-				76DFEDA71D69069B0073136C /* ViewController.swift.bak */,
+				59A093201DAC09A100D1212F /* ViewControllerButtons.swift */,
 				76DFED981D65297E0073136C /* Main.storyboard */,
 				C0BACEC819D3027000DF2DB8 /* Supporting Files */,
 				76DFEDA51D680CBE0073136C /* Images.xcassets */,
@@ -148,7 +148,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76DFEDA81D69069B0073136C /* ViewController.swift.bak in Resources */,
 				76DFEDA61D680CBE0073136C /* Images.xcassets in Resources */,
 				76DFED9A1D65297E0073136C /* Main.storyboard in Resources */,
 			);
@@ -165,6 +164,7 @@
 				C089C49419E90B910084D830 /* BTService.swift in Sources */,
 				C0BACEEE19D30D2600DF2DB8 /* BTDiscovery.swift in Sources */,
 				C0BACECB19D3027000DF2DB8 /* AppDelegate.swift in Sources */,
+				59A093211DAC09A100D1212F /* ViewControllerButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

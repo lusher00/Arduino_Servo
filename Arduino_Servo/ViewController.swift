@@ -76,9 +76,7 @@ class ViewController: UIViewController {
         // Watch Bluetooth connection
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.connectionChanged(_:)), name: NSNotification.Name(rawValue: BLEServiceChangedStatusNotification), object: nil)
         
-        
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.dataReceived(_:)), name: NSNotification.Name(rawValue: BLEDataChangedStatusNotification), object: nil)
-        
         
         // Start the Bluetooth discovery process
         btDiscoverySharedInstance
@@ -87,11 +85,6 @@ class ViewController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: BLEServiceChangedStatusNotification), object: nil)
     }
-    
-    
-    
-    
-    
     
     func fromColor(_ color: UIColor, size: CGSize) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
@@ -107,7 +100,6 @@ class ViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        self.stopTimerTXDelay()
     }
     
     func connectionChanged(_ notification: Notification) {
@@ -170,56 +162,6 @@ class ViewController: UIViewController {
         }
         
     }
-    
-    func sendPosition(_ position: UInt8) {
-        // Valid position range: 0 to 180
-        
-        if !self.allowTX {
-            return
-        }
-        
-        // Validate value
-        if position == lastPosition {
-            return
-        }
-        else if ((position < 0) || (position > 180)) {
-            return
-        }
-        
-        // Send position to BLE Shield (if service exists and is connected)
-        if let bleService = btDiscoverySharedInstance.bleService {
-            bleService.writePosition(position)
-            lastPosition = position;
-            
-            // Start delay timer
-            self.allowTX = false
-            if timerTXDelay == nil {
-                timerTXDelay = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.timerTXDelayElapsed), userInfo: nil, repeats: false)
-            }
-        }
-    }
-    
-    func timerTXDelayElapsed() {
-        self.allowTX = true
-        self.stopTimerTXDelay()
-        
-        // Send current slider position
-        //self.sendPosition(UInt8(self.positionSlider.value))
-    }
-    
-    func stopTimerTXDelay() {
-        if self.timerTXDelay == nil {
-            return
-        }
-        
-        timerTXDelay?.invalidate()
-        self.timerTXDelay = nil
-    }
-    
-    func update(_ str: String){
-        textBox.text = str
-    }
-    
 }
 
 extension Double {

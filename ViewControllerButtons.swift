@@ -22,17 +22,17 @@ class ViewControllerButtons: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func sendPosition(_ position: UInt8) {
+    func sendData(_ str: String) {
 
         // Send position to BLE Shield (if service exists and is connected)
         if let bleService = btDiscoverySharedInstance.bleService
         {
-            bleService.writePosition(position)
+            bleService.writeData(str)
         }
     }
     
     @IBAction func send(_ sender: AnyObject) {
-        sendPosition(0)
+        sendData("Hello World!")
     }
     
     // MARK: - Navigation

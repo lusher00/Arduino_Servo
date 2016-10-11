@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         #if false
-            
+
             let view: UIView = UIView.init(frame: CGRect(x: 0, y: 0, width: 500, height: 500))
             let scrollView = UIScrollView.init(frame: view.bounds)
             view.addSubview(scrollView)
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
             view.layer.addSublayer(layer)
             
             self.view.addSubview(view)
-            
+
         #else
             
             let image = UIImage.init(named:"horizon")!
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
             self.myScrollView.backgroundColor = UIColor.black
             self.myScrollView.addSubview(self.myImageView)
             self.view.addSubview(self.myScrollView)
-            
+
         #endif
         
         self.connectionStatusLabel.text = "Disconnected"
@@ -76,8 +76,6 @@ class ViewController: UIViewController {
         // Watch Bluetooth connection
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.connectionChanged(_:)), name: NSNotification.Name(rawValue: BLEServiceChangedStatusNotification), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.dataReceived(_:)), name: NSNotification.Name(rawValue: BLEDataChangedStatusNotification), object: nil)
-        
         // Start the Bluetooth discovery process
         btDiscoverySharedInstance
     }
@@ -86,6 +84,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: BLEServiceChangedStatusNotification), object: nil)
     }
     
+
     func fromColor(_ color: UIColor, size: CGSize) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         UIGraphicsBeginImageContext(rect.size)
@@ -100,6 +99,7 @@ class ViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+
     }
     
     func connectionChanged(_ notification: Notification) {
@@ -163,6 +163,7 @@ class ViewController: UIViewController {
         
     }
 }
+
 
 extension Double {
     func fixedFractionDigits(digits: Int) -> String {
